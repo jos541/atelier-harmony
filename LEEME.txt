@@ -1,9 +1,4 @@
-Atelier Harmony iPad v0.4
-
-Novedades:
-- Imagen de referencia en capa independiente.
-- Mover, escalar y rotar la referencia con gestos.
-- Nuevo pincel Bolígrafo.
-- Botón Pantalla limpia para ocultar paletas.
-
-Sube el contenido de esta carpeta a la raíz del repositorio GitHub Pages.
+Atelier Harmony v0.6
+Tinta caligráfica, borrador de intensidad gradual por presión y difuminado suave. Diagnóstico de PointerEvent.pressure en panel Estado.
+Si rango es 0.50–0.50, Safari no está entregando variación de presión.
+Sube estos archivos a la raíz de GitHub Pages. Haz copia del proyecto JSON antes de actualizar.

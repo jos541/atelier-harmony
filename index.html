@@ -11,10 +11,10 @@
 <link rel="apple-touch-icon" href="icon.png">
 <title>Atelier Harmony · iPad</title>
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef1f4;background:#171b20;--panel:#20262d;--panel2:#303740;--border:#39434c;--accent:#a4dcd3;--accentText:#12221e}
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef1f4;background:#171b20;--panel:#20262d;--border:#39434c;--accent:#a4dcd3;--accentText:#12221e}
 *{box-sizing:border-box}html,body{margin:0;overflow:hidden;background:#171b20}button,input,select{font:inherit}button{border:1px solid #39414a;border-radius:10px;background:#303740;color:#f5f5f5;padding:9px 12px;cursor:pointer}button:active{background:#53606a}button.active{background:var(--accent);color:var(--accentText);border-color:var(--accent)}button.small{font-size:13px;padding:8px 10px}label{display:flex;align-items:center;gap:5px;font-size:12px;color:#c5cbd0}input[type=color]{width:46px;height:37px;padding:3px;border:1px solid #46515b;border-radius:9px;background:#303740;color:#fff}select,input[type=number]{height:37px;border:1px solid #46515b;border-radius:9px;background:#303740;color:#fff;padding:5px}input[type=range]{width:100%;accent-color:var(--accent)}
 .app{display:flex;flex-direction:column;height:100dvh}.app.clean header,.app.clean .tools,.app.clean .layers{display:none}.app.clean .work{height:100dvh}.app.clean .hint{opacity:.25}.app.clean .cleanToggle{display:flex}.cleanToggle{position:fixed;left:max(12px,env(safe-area-inset-left));top:max(12px,env(safe-area-inset-top));z-index:20;display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:#151a1fd9;border:1px solid #46505a;color:#fff;backdrop-filter:blur(10px)}
-header{height:auto;min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:8px max(10px,env(safe-area-inset-right));border-bottom:1px solid #37404a;background:var(--panel)}h1{font-size:16px;letter-spacing:.3px;margin:0 12px 0 2px;white-space:nowrap}.grow{flex:1}
+header{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:8px max(10px,env(safe-area-inset-right));border-bottom:1px solid #37404a;background:var(--panel)}h1{font-size:16px;letter-spacing:.3px;margin:0 12px 0 2px;white-space:nowrap}.grow{flex:1}
 .work{display:flex;min-height:0;flex:1}.tools,.layers{background:var(--panel);overflow-y:auto}.tools{width:228px;flex-shrink:0;border-right:1px solid var(--border);padding:12px}.layers{width:235px;flex-shrink:0;border-left:1px solid var(--border);padding:12px}.tools h2,.layers h2{font-size:11px;letter-spacing:1.3px;color:#a0aeb9;text-transform:uppercase;margin:14px 0 8px}.tools button,.layers button{margin-bottom:6px}.tools .full{width:100%;text-align:left}.row{display:flex;gap:6px;flex-wrap:wrap}.row button{flex:1}.meta{font-size:11px;color:#b4bbc2;line-height:1.45}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#2c363f;border:1px solid #47515a;color:#c9d3d9;font-size:11px}
 .stage{flex:1;position:relative;overflow:hidden;background-color:#393e43;background-image:linear-gradient(45deg,#42484e 25%,transparent 25%),linear-gradient(-45deg,#42484e 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#42484e 75%),linear-gradient(-45deg,transparent 75%,#42484e 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0;touch-action:none;user-select:none}.stage canvas{position:absolute;touch-action:none;transform-origin:top left;box-shadow:0 12px 38px #0006}#preview{box-shadow:none;pointer-events:none}.hint{position:absolute;left:12px;bottom:13px;background:#14181cbd;color:#e1e7eb;border-radius:9px;padding:7px 11px;font-size:11px;pointer-events:none;z-index:5;max-width:min(70%,460px)}#notice{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:#151a1fe9;padding:10px 16px;border-radius:10px;display:none;z-index:6;font-size:13px}
 .layer{border:1px solid #424b55;border-radius:9px;padding:8px;margin-bottom:7px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px}.layer.selected{border-color:var(--accent);background:#334743}.layer span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.layer button{padding:3px 5px;border:0;background:transparent;margin:0}
@@ -41,7 +41,7 @@ header{height:auto;min-height:60px;display:flex;flex-wrap:wrap;align-items:cente
   </header>
   <div class="work">
     <aside class="tools">
-      <h2>Pinceles</h2>
+      <h2>Herramientas</h2>
       <div id="brushes"></div>
       <h2>Trazo</h2>
       <label>Color <input id="color" type="color" value="#172b35"></label><br>
@@ -69,7 +69,7 @@ header{height:auto;min-height:60px;display:flex;flex-wrap:wrap;align-items:cente
       <button class="full" id="clear">Vaciar capa</button>
 
       <h2>Ayuda</h2>
-      <div class="meta">Apple Pencil: dibujar con presión variable.<br>Dos dedos: zoom y desplazamiento del lienzo.<br>Modo referencia: transforma la imagen, no el lienzo.<br>Pantalla limpia: oculta barras y deja solo el lienzo.</div>
+      <div class="meta">Apple Pencil: presión variable reforzada para que el grosor se note claramente.<br>Dos dedos: zoom y desplazamiento del lienzo.<br>Difuminar: arrastra color y mezcla píxeles de la capa actual.<br>Borrador: presión suave borra poco; presión fuerte borra más. Comprueba el rango de presión en Estado.</div>
     </aside>
 
     <main class="stage" id="stage">
@@ -85,7 +85,7 @@ header{height:auto;min-height:60px;display:flex;flex-wrap:wrap;align-items:cente
       <div class="row"><button id="addLayer" title="Nueva capa">＋</button><button id="deleteLayer" title="Eliminar capa">−</button></div>
       <div class="row" style="margin-top:7px"><button id="up" title="Subir capa">↑</button><button id="down" title="Bajar capa">↓</button></div>
       <h2>Estado</h2>
-      <div class="meta" id="statusText">Versión 0.4 · Motor procedural mejorado con capa de referencia transformable, bolígrafo y modo limpio.</div>
+      <div class="meta" id="statusText">Versión 0.6</div>
       <p class="meta" style="margin-top:12px"><span class="pill" id="modePill">Modo dibujo</span></p>
     </aside>
   </div>
@@ -106,6 +106,8 @@ const $=id=>document.getElementById(id);
 const app=$('app'), stage=$('stage'), display=$('display'), preview=$('preview');
 const dctx=display.getContext('2d',{alpha:false});
 const pctx=preview.getContext('2d');
+const smudgeTmp=document.createElement('canvas');
+const smudgeTmpCtx=smudgeTmp.getContext('2d');
 let W=2400,H=1600,zoom=1,panX=0,panY=0;
 let layers=[], selected=0;
 let brush='sketchy', color='#172b35', size=8, opacity=.8;
@@ -114,159 +116,142 @@ let touchPoints=new Map();
 let needsPaint=false, previewPending=false, previewDirty=false;
 let transformMode=false, cleanMode=false;
 let gesture=null, imageGesture=null;
-const modes=[['pen','Bolígrafo'],['pencil','Lápiz'],['sketchy','Sketchy'],['web','Web'],['shaded','Shaded'],['fur','Fur'],['ribbon','Ribbon'],['chrome','Chrome'],['cross','Crosshatch']];
-
+let pressureSeen=false, lastPressure=.5, pressureMin=1, pressureMax=0, inputType="sin datos";
+const modes=[
+  ['pen','Bolígrafo'],['ink','Tinta caligráfica'],['pencil','Lápiz'],['eraser','Borrador'],['smudge','Difuminar'],
+  ['sketchy','Sketchy'],['web','Web'],['shaded','Shaded'],['fur','Fur'],['ribbon','Ribbon'],['chrome','Chrome'],['cross','Crosshatch']
+];
 const rand=(n,k)=>{let x=Math.sin(n*127.1+k*311.7)*43758.5453123;return x-Math.floor(x)};
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
-const dist=(a,b)=>Math.hypot(b.x-a.x,b.y-a.y);
 const lerp=(a,b,t)=>a+(b-a)*t;
 
 function makePaintLayer(name){return {kind:'draw',name,visible:true,strokes:[],canvas:null};}
-function makeImageLayer(name, dataURL, img){
-  const layer={kind:'image',name,visible:true,strokes:[],canvas:null,imageData:dataURL,imageOpacity:1,rotation:0,scale:1,tx:W/2,ty:H/2,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,imageEl:img};
-  fitImageLayer(layer,'contain');
-  return layer;
-}
+function makeImageLayer(name,dataURL,img){const layer={kind:'image',name,visible:true,strokes:[],canvas:null,imageData:dataURL,imageOpacity:1,rotation:0,scale:1,tx:W/2,ty:H/2,naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,imageEl:img};fitImageLayer(layer,'contain');return layer;}
 function currentLayer(){return layers[selected];}
-function data(){
-  return {version:4,width:W,height:H,selected,layers:layers.map(l=>({
-    kind:l.kind,name:l.name,visible:l.visible,strokes:l.strokes||[],
-    imageData:l.imageData||null,imageOpacity:l.imageOpacity??1,
-    rotation:l.rotation||0,scale:l.scale||1,tx:l.tx||0,ty:l.ty||0,
-    naturalWidth:l.naturalWidth||0,naturalHeight:l.naturalHeight||0
-  }))};
-}
+function data(){return {version:5,width:W,height:H,selected,layers:layers.map(l=>({kind:l.kind,name:l.name,visible:l.visible,strokes:l.strokes||[],imageData:l.imageData||null,imageOpacity:l.imageOpacity??1,rotation:l.rotation||0,scale:l.scale||1,tx:l.tx||0,ty:l.ty||0,naturalWidth:l.naturalWidth||0,naturalHeight:l.naturalHeight||0}))};}
 function saveLocal(){clearTimeout(saveLocal.t);saveLocal.t=setTimeout(()=>{try{localStorage.setItem('atelier-harmony-project',JSON.stringify(data()));}catch(err){toast('Autoguardado lleno: exporta el proyecto');}},1200)}
 function pushHistory(){undo.push(JSON.stringify(data()));if(undo.length>30)undo.shift();redo=[];}
 function mkCanvas(layer){if(layer.canvas && layer.canvas.width===W && layer.canvas.height===H) return layer.canvas;const c=document.createElement('canvas');c.width=W;c.height=H;layer.canvas=c;return c;}
-function fitImageLayer(layer, mode='contain'){
-  if(!layer.naturalWidth||!layer.naturalHeight) return;
-  const iw=layer.naturalWidth, ih=layer.naturalHeight;
-  const k=mode==='cover'?Math.max(W/iw,H/ih):Math.min(W/iw,H/ih);
-  layer.scale=k; layer.rotation=0; layer.tx=W/2; layer.ty=H/2;
-  rebuild(layer);
-}
-function drawImageLayer(layer, g){
-  const img=layer.imageEl; if(!img || !img.naturalWidth) return;
-  g.save();
-  g.clearRect(0,0,W,H);
-  g.translate(layer.tx, layer.ty);
-  g.rotate(layer.rotation||0);
-  g.scale(layer.scale||1, layer.scale||1);
-  g.globalAlpha=layer.imageOpacity ?? 1;
-  g.imageSmoothingEnabled=true; g.imageSmoothingQuality='high';
-  g.drawImage(img, -img.naturalWidth/2, -img.naturalHeight/2);
-  g.restore();
-}
+function fitImageLayer(layer,mode='contain'){if(!layer.naturalWidth||!layer.naturalHeight) return;const iw=layer.naturalWidth,ih=layer.naturalHeight,k=mode==='cover'?Math.max(W/iw,H/ih):Math.min(W/iw,H/ih);layer.scale=k;layer.rotation=0;layer.tx=W/2;layer.ty=H/2;rebuild(layer);}
+function drawImageLayer(layer,g){const img=layer.imageEl;if(!img||!img.naturalWidth)return;g.save();g.clearRect(0,0,W,H);g.translate(layer.tx,layer.ty);g.rotate(layer.rotation||0);g.scale(layer.scale||1,layer.scale||1);g.globalAlpha=layer.imageOpacity??1;g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';g.drawImage(img,-img.naturalWidth/2,-img.naturalHeight/2);g.restore();}
 function drawCircle(g,x,y,r){g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.fill();}
-function drawLine(g,a,b,w){g.lineWidth=w; g.beginPath(); g.moveTo(a.x,a.y); g.lineTo(b.x,b.y); g.stroke();}
+function pointerPressure(ev){
+  inputType=ev.pointerType||'desconocido';
+  let p=typeof ev.pressure==='number'?ev.pressure:.5;
+  if(ev.pointerType!=='pen') return .5;
+  p=clamp(p,0,1);lastPressure=p;pressureMin=Math.min(pressureMin,p);pressureMax=Math.max(pressureMax,p);
+  pressureSeen=pressureMax-pressureMin>.06;
+  updateStatus();return p;
+}
+function widthFor(tool,base,p){const q=clamp(p,.01,1);if(tool==='eraser') return Math.max(.8,base*(.65+Math.pow(q,1.1)*.75));if(tool==='pen') return Math.max(.4,base*(.06+Math.pow(q,1.75)*2.4));if(tool==='ink')return Math.max(.35,base*(.035+Math.pow(q,1.65)*2.65));if(tool==='pencil') return Math.max(.35,base*(.06+Math.pow(q,1.20)*1.80));if(tool==='smudge') return Math.max(3,base*(.40+Math.pow(q,1.15)*1.90));return Math.max(.35,base*(.10+Math.pow(q,1.06)*1.85));}
+
 function renderSmoothStroke(g,s){
-  const pts=s.points; if(!pts.length) return;
-  g.save(); g.strokeStyle=s.color; g.fillStyle=s.color; g.globalAlpha=s.opacity; g.lineCap='round'; g.lineJoin='round';
-  const factor = s.brush==='pen' ? .55 : .9;
-  const minMul = s.brush==='pen' ? .10 : .18;
-  const maxMul = s.brush==='pen' ? .75 : 1.1;
-  const applyWidth = p=>Math.max(.35, s.size*(minMul + Math.pow(p||.5,factor)*(maxMul-minMul)));
-  if(pts.length===1){drawCircle(g,pts[0].x,pts[0].y,applyWidth(pts[0].p)/2);g.restore();return;}
-  let prev = pts[0];
-  let mid = {x:(pts[0].x+pts[1].x)/2,y:(pts[0].y+pts[1].y)/2};
+  const pts=s.points;if(!pts.length)return;const erasing=s.brush==='eraser';const ink=s.brush==='ink';
+  g.save();g.lineCap='round';g.lineJoin='round';g.strokeStyle=s.color;g.fillStyle=s.color;g.globalCompositeOperation=erasing?'destination-out':'source-over';
+  if(pts.length===1){g.globalAlpha=erasing?clamp(.015+Math.pow(pts[0].p,2.5)*.92, .015, .97):(.25+s.opacity*.75);drawCircle(g,pts[0].x,pts[0].y,widthFor(s.brush,s.size,pts[0].p)/2);g.restore();return;}
+  let mid={x:(pts[0].x+pts[1].x)/2,y:(pts[0].y+pts[1].y)/2};
   for(let i=1;i<pts.length-1;i++){
-    const curr=pts[i], next=pts[i+1];
-    const nextMid={x:(curr.x+next.x)/2,y:(curr.y+next.y)/2};
+    const curr=pts[i], next=pts[i+1], nextMid={x:(curr.x+next.x)/2,y:(curr.y+next.y)/2};
     g.beginPath();
-    g.lineWidth=applyWidth(curr.p);
-    g.moveTo(mid.x,mid.y);
-    g.quadraticCurveTo(curr.x,curr.y,nextMid.x,nextMid.y);
-    g.stroke();
-    mid=nextMid; prev=curr;
+    g.lineWidth=widthFor(s.brush,s.size,curr.p);
+    g.globalAlpha=erasing?clamp(.012+Math.pow(curr.p,2.5)*.92,.012,.97):ink?clamp(s.opacity*(.45+.55*curr.p),.1,1):clamp((.18+.82*curr.p)*s.opacity,.08,1);
+    g.moveTo(mid.x,mid.y);g.quadraticCurveTo(curr.x,curr.y,nextMid.x,nextMid.y);g.stroke();
+    if(s.brush==='pencil'){
+      g.globalAlpha=clamp(s.opacity*(.05+.18*(curr.p||.5)),.02,.25);
+      g.lineWidth=Math.max(.25,widthFor(s.brush,s.size,curr.p)*.48);
+      g.beginPath();g.moveTo(mid.x+.35,mid.y+.35);g.quadraticCurveTo(curr.x+.35,curr.y+.35,nextMid.x+.35,nextMid.y+.35);g.stroke();
+    }
+    mid=nextMid;
   }
-  g.beginPath(); g.lineWidth=applyWidth(pts.at(-1).p); g.moveTo(mid.x,mid.y); g.lineTo(pts.at(-1).x,pts.at(-1).y); g.stroke();
-  if(s.brush==='pencil'){
-    g.globalAlpha=s.opacity*.12;
-    for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],w=applyWidth(b.p); drawLine(g,{x:a.x+.4,y:a.y+.4},{x:b.x+.4,y:b.y+.4},Math.max(.3,w*.55));}
-  }
+  const last=pts.at(-1);
+  g.beginPath();g.lineWidth=widthFor(s.brush,s.size,last.p);g.globalAlpha=erasing?clamp(.012+Math.pow(last.p,2.5)*.92,.012,.97):ink?clamp(s.opacity*(.45+.55*last.p),.1,1):clamp((.18+.82*last.p)*s.opacity,.08,1);g.moveTo(mid.x,mid.y);g.lineTo(last.x,last.y);g.stroke();
   g.restore();
 }
+
 function renderProceduralStroke(g,s){
-  const pts=s.points; if(!pts.length) return;
-  g.save(); g.strokeStyle=s.color; g.fillStyle=s.color; g.globalAlpha=s.opacity; g.lineCap='round'; g.lineJoin='round';
-  if(pts.length===1){drawCircle(g,pts[0].x,pts[0].y,Math.max(.8,s.size*.45));g.restore();return;}
+  const pts=s.points;if(!pts.length)return;g.save();g.strokeStyle=s.color;g.fillStyle=s.color;g.lineCap='round';g.lineJoin='round';
+  if(pts.length===1){g.globalAlpha=s.opacity;drawCircle(g,pts[0].x,pts[0].y,Math.max(.8,widthFor(s.brush,s.size,pts[0].p)*.38));g.restore();return;}
   const recent=[];
   for(let i=1;i<pts.length;i++){
-    const a=pts[i-1], b=pts[i], p=Math.max(.18,b.p||.5), th=s.size*(.35+p*.95);
+    const a=pts[i-1], b=pts[i], p=Math.max(.04,b.p||.5), th=widthFor(s.brush,s.size,p);
     const line=(u,v,ox=0,oy=0,w=Math.max(.35,th*.2),alpha=s.opacity)=>{g.lineWidth=w;g.globalAlpha=alpha;g.beginPath();g.moveTo(u.x,u.y);g.lineTo(v.x+ox,v.y+oy);g.stroke();};
     if(s.brush==='sketchy'){
-      line(a,b,0,0,Math.max(.45,th*.22),s.opacity);
-      if(i%2===0){line(a,b,(rand(i,s.seed)-.5)*th*2.8,(rand(i+12,s.seed)-.5)*th*2.8,Math.max(.3,th*.11),s.opacity*.32);}
+      line(a,b,0,0,Math.max(.45,th*.22),clamp(s.opacity*(.2+.9*p),.1,1));
+      if(i%2===0) line(a,b,(rand(i,s.seed)-.5)*th*2.8,(rand(i+12,s.seed)-.5)*th*2.8,Math.max(.3,th*.11),clamp(s.opacity*.45*p,.04,.5));
     } else if(s.brush==='ribbon'){
-      line(a,b,0,0,Math.max(.55,th*.58),s.opacity);
-      line({x:a.x+th*.7,y:a.y+th*.7},{x:b.x+th*.7,y:b.y+th*.7},0,0,1,s.opacity*.7);
+      line(a,b,0,0,Math.max(.55,th*.58),clamp(s.opacity*(.2+.8*p),.1,1));
+      line({x:a.x+th*.7,y:a.y+th*.7},{x:b.x+th*.7,y:b.y+th*.7},0,0,1,clamp(s.opacity*(.15+.7*p),.06,1));
     } else if(s.brush==='fur') {
-      line(a,b,0,0,Math.max(.35,th*.11),s.opacity);
-      for(let j=0;j<3;j++){const ang=rand(i*7+j,s.seed)*Math.PI*2,len=th*(.8+rand(i+j,s.seed)*2);line(b,{x:b.x+Math.cos(ang)*len,y:b.y+Math.sin(ang)*len},0,0,Math.max(.3,th*.1),s.opacity*.8);}
+      line(a,b,0,0,Math.max(.35,th*.11),clamp(s.opacity*(.2+.8*p),.08,1));
+      for(let j=0;j<3;j++){const ang=rand(i*7+j,s.seed)*Math.PI*2,len=th*(.8+rand(i+j,s.seed)*2);line(b,{x:b.x+Math.cos(ang)*len,y:b.y+Math.sin(ang)*len},0,0,Math.max(.3,th*.1),clamp(s.opacity*(.15+.8*p),.06,1));}
     } else if(s.brush==='cross') {
-      line(a,b,0,0,Math.max(.45,th*.14),s.opacity);
-      for(let j=0;j<3;j++){const off=(rand(i*3+j,s.seed)-.5)*th*1.8;line({x:b.x-off,y:b.y-off},{x:b.x+off,y:b.y+off},0,0,Math.max(.3,th*.1),s.opacity*.7);}
+      line(a,b,0,0,Math.max(.45,th*.14),clamp(s.opacity*(.15+.85*p),.06,1));
+      for(let j=0;j<3;j++){const off=(rand(i*3+j,s.seed)-.5)*th*1.8;line({x:b.x-off,y:b.y-off},{x:b.x+off,y:b.y+off},0,0,Math.max(.3,th*.1),clamp(s.opacity*(.1+.7*p),.06,1));}
     } else {
-      line(a,b,0,0,Math.max(.45,th*.13),s.brush==='shaded'?s.opacity*.18:s.opacity*.36);
+      const baseAlpha=s.brush==='shaded'?clamp(s.opacity*(.05+.35*p),.03,.65):clamp(s.opacity*(.12+.58*p),.06,1);
+      line(a,b,0,0,Math.max(.45,th*.13),baseAlpha);
       for(let j=0;j<recent.length;j+=Math.max(1,Math.floor(recent.length/8))){
         const q=recent[j],dd=Math.hypot(q.x-b.x,q.y-b.y), range=th*(s.brush==='chrome'?8:16);
-        if(dd<range && dd>th*.6 && rand(j+i,s.seed)>.34){line(b,q,0,0,Math.max(.25,th*(s.brush==='chrome'?.18:.10)),s.opacity*(s.brush==='chrome'?.46:.34));}
+        const connectAlpha=s.brush==='chrome'?clamp(s.opacity*(.18+.42*p),.03,.85):clamp(s.opacity*(.12+.34*p),.03,.75);
+        if(dd<range && dd>th*.6 && rand(j+i,s.seed)>.34) line(b,q,0,0,Math.max(.25,th*(s.brush==='chrome'?.18:.10)),connectAlpha);
       }
     }
     recent.push(b); if(recent.length>135) recent.shift();
   }
   g.restore();
 }
-function strokeTo(layer,s){
+
+function renderSmudgeStroke(layer,s,startIndex=1){
+  const canvas=mkCanvas(layer), g=canvas.getContext('2d');
+  if((s.points||[]).length<2) return;
+  for(let i=Math.max(1,startIndex); i<s.points.length; i++){
+    const a=s.points[i-1], b=s.points[i], d=Math.hypot(b.x-a.x,b.y-a.y), p=b.p||.5;
+    const radius=widthFor('smudge',s.size,p)*.65, alpha=clamp((.012+.09*Math.pow(p,1.7))*s.opacity,.005,.12);
+    const steps=Math.max(1, Math.min(10,Math.ceil(d/Math.max(2,radius*.65))));
+    for(let step=0; step<steps; step++){
+      const t=step/steps, nt=Math.min(1,(step+1)/steps);
+      const x=lerp(a.x,b.x,t), y=lerp(a.y,b.y,t), nx=lerp(a.x,b.x,nt), ny=lerp(a.y,b.y,nt);
+      const sx=clamp(Math.floor(x-radius),0,W-1), sy=clamp(Math.floor(y-radius),0,H-1);
+      const sw=clamp(Math.ceil(radius*2),1,W-sx), sh=clamp(Math.ceil(radius*2),1,H-sy);
+      if(sw<1 || sh<1) continue;
+      let imgData;
+      try{imgData=g.getImageData(sx,sy,sw,sh);}catch(err){continue;}
+      smudgeTmp.width=sw; smudgeTmp.height=sh; smudgeTmpCtx.clearRect(0,0,sw,sh); smudgeTmpCtx.putImageData(imgData,0,0);
+      g.save(); g.globalAlpha=alpha; g.filter=`blur(${Math.max(.6,radius*.09)}px)`; g.drawImage(smudgeTmp,nx-radius,ny-radius,sw,sh); g.restore();
+    }
+  }
+}
+
+function strokeTo(layer,s,previewMode=false){
+  if(s.brush==='smudge'){ if(!previewMode) renderSmudgeStroke(layer,s); return; }
   const g=mkCanvas(layer).getContext('2d');
-  if(s.brush==='pen' || s.brush==='pencil') renderSmoothStroke(g,s); else renderProceduralStroke(g,s);
+  if(s.brush==='pen' || s.brush==='pencil' || s.brush==='ink' || s.brush==='eraser') renderSmoothStroke(g,s); else renderProceduralStroke(g,s);
 }
-function rebuild(layer){
-  const c=mkCanvas(layer), g=c.getContext('2d'); g.clearRect(0,0,W,H);
-  if(layer.kind==='image'){drawImageLayer(layer,g); return;}
-  for(const s of (layer.strokes||[])) strokeTo(layer,s);
-}
-function rebuildAll(){for(const l of layers) rebuild(l);}
-function paint(){
-  if(needsPaint) return; needsPaint=true;
-  requestAnimationFrame(()=>{
-    needsPaint=false;
-    display.width=W; display.height=H;
-    dctx.fillStyle='#fff'; dctx.fillRect(0,0,W,H);
-    for(const l of layers) if(l.visible) dctx.drawImage(mkCanvas(l),0,0);
-    layout();
-  });
-}
+
+function rebuild(layer){const c=mkCanvas(layer), g=c.getContext('2d'); g.clearRect(0,0,W,H); if(layer.kind==='image'){drawImageLayer(layer,g); return;} for(const s of (layer.strokes||[])) strokeTo(layer,s,false);}
+function paint(){if(needsPaint) return; needsPaint=true; requestAnimationFrame(()=>{needsPaint=false; display.width=W; display.height=H; dctx.fillStyle='#fff'; dctx.fillRect(0,0,W,H); for(const l of layers) if(l.visible) dctx.drawImage(mkCanvas(l),0,0); layout();});}
 function layout(){for(const c of [display,preview]){c.style.width=(W*zoom)+'px'; c.style.height=(H*zoom)+'px'; c.style.left=panX+'px'; c.style.top=panY+'px';} $('dims').textContent=`${W} × ${H} px · ${Math.round(zoom*100)} %`;}
 function fit(){const w=stage.clientWidth,h=stage.clientHeight; zoom=Math.min((w-40)/W,(h-40)/H,1); panX=(w-W*zoom)/2; panY=(h-H*zoom)/2; layout();}
-function clientToCanvas(clientX,clientY, pressure=0.5){const r=stage.getBoundingClientRect(); return {x:(clientX-r.left-panX)/zoom, y:(clientY-r.top-panY)/zoom, p:pressure};}
+function clientToCanvas(clientX,clientY,pressure=.5){const r=stage.getBoundingClientRect(); return {x:(clientX-r.left-panX)/zoom, y:(clientY-r.top-panY)/zoom, p:pressure};}
+
 function refreshLayers(){
   const list=$('layerList'); list.textContent='';
   layers.forEach((l,i)=>{
     const div=document.createElement('div'); div.className='layer'+(i===selected?' selected':'');
     const vis=document.createElement('button'); vis.textContent=l.visible?'◉':'○'; vis.onclick=e=>{e.stopPropagation();pushHistory();l.visible=!l.visible;refreshLayers();paint();saveLocal();};
     const span=document.createElement('span'); span.textContent=(l.kind==='image'?'▧ ':'')+l.name;
-    div.append(vis,span); div.onclick=()=>{selected=i; refreshLayers(); syncImageUI(); updateStatus();};
+    div.append(vis,span);
+    div.onclick=()=>{selected=i; refreshLayers(); syncImageUI(); updateStatus();};
     div.ondblclick=()=>{const n=prompt('Nombre de capa',l.name); if(n){pushHistory(); l.name=n; refreshLayers(); saveLocal();}};
     list.prepend(div);
   });
 }
-function syncImageUI(){
-  const l=currentLayer(); const active=l && l.kind==='image';
-  $('imageOpacity').disabled=!active; $('imageContain').disabled=!active; $('imageCover').disabled=!active; $('toggleTransform').disabled=!active;
-  if(active){$('imageOpacity').value=Math.round((l.imageOpacity ?? 1)*100); $('imageOpacityLabel').textContent=$('imageOpacity').value+'%';}
-  if(!active) transformMode=false;
-  $('toggleTransform').classList.toggle('active',transformMode);
-  updateStatus();
-}
-function updateStatus(){
-  $('modePill').textContent = transformMode ? 'Modo referencia' : (cleanMode ? 'Pantalla limpia' : 'Modo dibujo');
-  $('hint').textContent = transformMode ? 'Referencia activa · 1 dedo mover · 2 dedos escalar y rotar' : 'Apple Pencil · 2 dedos para zoom y desplazamiento';
-}
+function syncImageUI(){const l=currentLayer(), active=l && l.kind==='image'; $('imageOpacity').disabled=!active; $('imageContain').disabled=!active; $('imageCover').disabled=!active; $('toggleTransform').disabled=!active; if(active){$('imageOpacity').value=Math.round((l.imageOpacity??1)*100); $('imageOpacityLabel').textContent=$('imageOpacity').value+'%';} if(!active) transformMode=false; $('toggleTransform').classList.toggle('active',transformMode); updateStatus();}
+function updateStatus(){ $('modePill').textContent = transformMode ? 'Modo referencia' : (cleanMode ? 'Pantalla limpia' : 'Modo dibujo'); $('hint').textContent = transformMode ? 'Referencia activa · 1 dedo mover · 2 dedos escalar y rotar' : 'Apple Pencil · 2 dedos para zoom y desplazamiento'; $('statusText').textContent = `Versión 0.6 · Entrada: ${inputType} · Presión ${Number(lastPressure).toFixed(2)} · Rango ${Number(pressureMin).toFixed(2)}–${Number(pressureMax).toFixed(2)} · ${pressureSeen?'VARIABLE':'SIN VARIACIÓN DETECTABLE'} · Tinta caligráfica, borrador gradual y difuminado suave.`; }
 function toast(msg){$('notice').textContent=msg; $('notice').style.display='block'; clearTimeout(toast.t); toast.t=setTimeout(()=>$('notice').style.display='none',2500);}
 function download(blob,name){const url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=name; document.body.append(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),15000);}
-function queuePreview(){previewDirty=true; if(previewPending) return; previewPending=true; requestAnimationFrame(()=>{previewPending=false; if(!previewDirty) return; previewDirty=false; pctx.clearRect(0,0,W,H); if(stroke) strokeTo({canvas:preview},stroke); layout();});}
+function queuePreview(){previewDirty=true; if(previewPending) return; previewPending=true; requestAnimationFrame(()=>{previewPending=false; if(!previewDirty) return; previewDirty=false; pctx.clearRect(0,0,W,H); if(stroke && stroke.brush!=='smudge' && stroke.brush!=='eraser') strokeTo({canvas:preview},stroke,true); layout();});}
+
 function restore(obj){
   W=obj.width; H=obj.height; layers=(obj.layers||[]).map(l=>({...l,canvas:null,imageEl:null})); selected=Math.min(obj.selected||0, Math.max(0,layers.length-1));
   const imagePromises=[];
@@ -288,8 +273,8 @@ function startStroke(e){
   }
   if(e.pointerType==='touch' && !$('finger').checked) return;
   pushHistory();
-  const pressure = e.pointerType==='pen' ? (e.pressure || 0.5) : 0.5;
-  stroke={brush,color,size,opacity,seed:Date.now()%999999,points:[clientToCanvas(e.clientX,e.clientY,pressure)]};
+  const p=pointerPressure(e);
+  stroke={brush,color,size,opacity,seed:Date.now()%999999,points:[clientToCanvas(e.clientX,e.clientY,p)]};
   preview.width=W; preview.height=H;
   stage.setPointerCapture(e.pointerId);
   queuePreview();
@@ -297,82 +282,31 @@ function startStroke(e){
 function moveStroke(e){
   if(!stroke) return;
   const events=e.getCoalescedEvents?e.getCoalescedEvents():[e];
+  let added=0;
   for(const ev of events){
-    const pressure = ev.pointerType==='pen' ? (ev.pressure||0.5) : 0.5;
-    const p=clientToCanvas(ev.clientX,ev.clientY,pressure);
-    if(p.x<0||p.y<0||p.x>W||p.y>H) continue;
-    const last=stroke.points.at(-1); if(!last || Math.hypot(p.x-last.x,p.y-last.y) < 0.45/zoom) continue;
-    stroke.points.push(p);
+    const p=pointerPressure(ev);
+    const pt=clientToCanvas(ev.clientX,ev.clientY,p);
+    if(pt.x<0||pt.y<0||pt.x>W||pt.y>H) continue;
+    const last=stroke.points.at(-1); if(!last || Math.hypot(pt.x-last.x,pt.y-last.y)<0.35/zoom) continue;
+    stroke.points.push(pt); added++;
   }
-  queuePreview();
+  if(!added) return;
+  if(stroke.brush==='smudge'){
+    renderSmudgeStroke(layers[selected],stroke,Math.max(1,stroke.points.length-added));
+    paint();
+  } else queuePreview();
 }
-function endStroke(){if(!stroke) return; layers[selected].strokes.push(stroke); strokeTo(layers[selected],stroke); stroke=null; pctx.clearRect(0,0,W,H); paint(); saveLocal();}
+function endStroke(){if(!stroke) return; layers[selected].strokes.push(stroke); if(stroke.brush!=='smudge') strokeTo(layers[selected],stroke,false); stroke=null; pctx.clearRect(0,0,W,H); paint(); saveLocal();}
 
-function beginImageGesture(){
-  const l=currentLayer(); if(!l || l.kind!=='image') return;
-  const pts=[...touchPoints.values()];
-  if(pts.length===1){ imageGesture={kind:'pan', start:pts[0], tx:l.tx, ty:l.ty}; }
-  else if(pts.length===2){
-    const [a,b]=pts; imageGesture={kind:'transform', layer:l, startTx:l.tx, startTy:l.ty, startScale:l.scale, startRotation:l.rotation,
-      cx:(a.x+b.x)/2, cy:(a.y+b.y)/2, dist:Math.hypot(a.x-b.x,a.y-b.y), angle:Math.atan2(b.y-a.y,b.x-a.x)};
-  }
-}
-function updateImageGesture(){
-  const l=currentLayer(); if(!l || l.kind!=='image' || !imageGesture) return;
-  const pts=[...touchPoints.values()];
-  if(imageGesture.kind==='pan' && pts.length===1){
-    const p=pts[0], start=imageGesture.start; l.tx=imageGesture.tx + (p.x-start.x)/zoom; l.ty=imageGesture.ty + (p.y-start.y)/zoom; rebuild(l); paint();
-  } else if(imageGesture.kind==='transform' && pts.length===2){
-    const [a,b]=pts; const cx=(a.x+b.x)/2, cy=(a.y+b.y)/2, distNow=Math.hypot(a.x-b.x,a.y-b.y), angNow=Math.atan2(b.y-a.y,b.x-a.x);
-    l.tx=imageGesture.startTx + (cx-imageGesture.cx)/zoom;
-    l.ty=imageGesture.startTy + (cy-imageGesture.cy)/zoom;
-    l.scale=clamp(imageGesture.startScale*(distNow/Math.max(1,imageGesture.dist)),0.02,40);
-    l.rotation=imageGesture.startRotation + (angNow-imageGesture.angle);
-    rebuild(l); paint();
-  }
-}
-function beginCanvasGesture(){
-  const pts=[...touchPoints.values()]; if(pts.length!==2){gesture=null; return;}
-  const [a,b]=pts; gesture={dist:Math.hypot(a.x-b.x,a.y-b.y),cx:(a.x+b.x)/2,cy:(a.y+b.y)/2,zoom,panX,panY};
-}
-function updateCanvasGesture(){
-  if(!gesture || touchPoints.size!==2) return;
-  const [a,b]=[...touchPoints.values()]; const distNow=Math.hypot(a.x-b.x,a.y-b.y), cx=(a.x+b.x)/2, cy=(a.y+b.y)/2;
-  const nz=clamp(gesture.zoom*distNow/Math.max(1,gesture.dist),0.05,8);
-  const sr=stage.getBoundingClientRect(); const ox=gesture.cx-sr.left, oy=gesture.cy-sr.top;
-  panX=cx-sr.left-(ox-gesture.panX)*(nz/gesture.zoom); panY=cy-sr.top-(oy-gesture.panY)*(nz/gesture.zoom); zoom=nz; layout();
-}
+function beginImageGesture(){const l=currentLayer(); if(!l || l.kind!=='image') return; const pts=[...touchPoints.values()]; if(pts.length===1){imageGesture={kind:'pan',start:pts[0],tx:l.tx,ty:l.ty};} else if(pts.length===2){const [a,b]=pts; imageGesture={kind:'transform',startTx:l.tx,startTy:l.ty,startScale:l.scale,startRotation:l.rotation,cx:(a.x+b.x)/2,cy:(a.y+b.y)/2,dist:Math.hypot(a.x-b.x,a.y-b.y),angle:Math.atan2(b.y-a.y,b.x-a.x)};}}
+function updateImageGesture(){const l=currentLayer(); if(!l || l.kind!=='image' || !imageGesture) return; const pts=[...touchPoints.values()]; if(imageGesture.kind==='pan' && pts.length===1){const p=pts[0], start=imageGesture.start; l.tx=imageGesture.tx+(p.x-start.x)/zoom; l.ty=imageGesture.ty+(p.y-start.y)/zoom; rebuild(l); paint();} else if(imageGesture.kind==='transform' && pts.length===2){const [a,b]=pts; const cx=(a.x+b.x)/2, cy=(a.y+b.y)/2, distNow=Math.hypot(a.x-b.x,a.y-b.y), angNow=Math.atan2(b.y-a.y,b.x-a.x); l.tx=imageGesture.startTx+(cx-imageGesture.cx)/zoom; l.ty=imageGesture.startTy+(cy-imageGesture.cy)/zoom; l.scale=clamp(imageGesture.startScale*(distNow/Math.max(1,imageGesture.dist)),0.02,40); l.rotation=imageGesture.startRotation+(angNow-imageGesture.angle); rebuild(l); paint();}}
+function beginCanvasGesture(){const pts=[...touchPoints.values()]; if(pts.length!==2){gesture=null; return;} const [a,b]=pts; gesture={dist:Math.hypot(a.x-b.x,a.y-b.y),cx:(a.x+b.x)/2,cy:(a.y+b.y)/2,zoom,panX,panY};}
+function updateCanvasGesture(){if(!gesture || touchPoints.size!==2) return; const [a,b]=[...touchPoints.values()]; const distNow=Math.hypot(a.x-b.x,a.y-b.y), cx=(a.x+b.x)/2, cy=(a.y+b.y)/2; const nz=clamp(gesture.zoom*distNow/Math.max(1,gesture.dist),0.05,8); const sr=stage.getBoundingClientRect(), ox=gesture.cx-sr.left, oy=gesture.cy-sr.top; panX=cx-sr.left-(ox-gesture.panX)*(nz/gesture.zoom); panY=cy-sr.top-(oy-gesture.panY)*(nz/gesture.zoom); zoom=nz; layout();}
 
-stage.addEventListener('pointerdown', e=>{
-  e.preventDefault();
-  if(e.pointerType==='touch'){
-    touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    if(transformMode && currentLayer()?.kind==='image') { beginImageGesture(); return; }
-    if(touchPoints.size===2){ if(stroke){undo.pop(); stroke=null; pctx.clearRect(0,0,W,H);} beginCanvasGesture(); return; }
-  }
-  if(transformMode && currentLayer()?.kind==='image') return;
-  if(touchPoints.size>=2) return;
-  startStroke(e);
-});
-stage.addEventListener('pointermove', e=>{
-  if(e.pointerType==='touch' && touchPoints.has(e.pointerId)){
-    touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY});
-    if(transformMode && currentLayer()?.kind==='image'){ updateImageGesture(); return; }
-    if(touchPoints.size===2){ updateCanvasGesture(); return; }
-  }
-  if(transformMode) return;
-  if(!stroke || (!e.buttons && e.pointerType==='mouse')) return;
-  moveStroke(e);
-});
-for(const evt of ['pointerup','pointercancel']) stage.addEventListener(evt, e=>{
-  if(e.pointerType==='touch' && touchPoints.has(e.pointerId)){
-    touchPoints.delete(e.pointerId);
-    if(transformMode && currentLayer()?.kind==='image'){ if(touchPoints.size>0) beginImageGesture(); else {imageGesture=null; pushHistory(); saveLocal();} return; }
-    if(touchPoints.size===1) beginCanvasGesture(); else gesture=null;
-  }
-  if(stroke && touchPoints.size<2) endStroke();
-});
-stage.addEventListener('wheel', e=>{e.preventDefault(); if(transformMode) return; const r=stage.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top, nz=clamp(zoom*(e.deltaY>0?0.9:1.1),0.05,8); panX=x-(x-panX)*nz/zoom; panY=y-(y-panY)*nz/zoom; zoom=nz; layout();},{passive:false});
+stage.addEventListener('pointerdown',e=>{e.preventDefault(); if(e.pointerType==='touch'){touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY}); if(transformMode && currentLayer()?.kind==='image'){beginImageGesture(); return;} if(touchPoints.size===2){ if(stroke){undo.pop(); stroke=null; pctx.clearRect(0,0,W,H);} beginCanvasGesture(); return; }} if(transformMode && currentLayer()?.kind==='image') return; if(touchPoints.size>=2) return; startStroke(e);});
+stage.addEventListener('pointermove',e=>{if(e.pointerType==='touch' && touchPoints.has(e.pointerId)){touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY}); if(transformMode && currentLayer()?.kind==='image'){updateImageGesture(); return;} if(touchPoints.size===2){updateCanvasGesture(); return;}} if(transformMode) return; if(!stroke || (!e.buttons && e.pointerType==='mouse')) return; moveStroke(e);});
+for(const evt of ['pointerup','pointercancel']) stage.addEventListener(evt,e=>{if(e.pointerType==='touch' && touchPoints.has(e.pointerId)){touchPoints.delete(e.pointerId); if(transformMode && currentLayer()?.kind==='image'){ if(touchPoints.size>0) beginImageGesture(); else {imageGesture=null; pushHistory(); saveLocal();} return; } if(touchPoints.size===1) beginCanvasGesture(); else gesture=null;} if(stroke && touchPoints.size<2) endStroke();});
+stage.addEventListener('wheel',e=>{e.preventDefault(); if(transformMode) return; const r=stage.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top, nz=clamp(zoom*(e.deltaY>0?0.9:1.1),0.05,8); panX=x-(x-panX)*nz/zoom; panY=y-(y-panY)*nz/zoom; zoom=nz; layout();},{passive:false});
 
 for(const [id,name] of modes){const b=document.createElement('button'); b.textContent=name; b.dataset.brush=id; b.className='full'; b.onclick=()=>{brush=id; document.querySelectorAll('#brushes button').forEach(x=>x.classList.toggle('active',x.dataset.brush===id));}; $('brushes').append(b);} document.querySelector('[data-brush=sketchy]').classList.add('active');
 $('color').oninput=e=>color=e.target.value;
@@ -394,16 +328,7 @@ $('file').onchange=async e=>{try{const o=JSON.parse(await e.target.files[0].text
 $('export').onclick=()=>{const c=document.createElement('canvas'); c.width=W; c.height=H; const g=c.getContext('2d'); if(!$('transparent').checked){g.fillStyle='#fff'; g.fillRect(0,0,W,H);} for(const l of layers) if(l.visible) g.drawImage(mkCanvas(l),0,0); c.toBlob(b=>{if(b) download(b,'atelier-harmony-'+W+'x'+H+'.png');},'image/png');};
 
 $('importImage').onclick=()=>$('imageFile').click();
-$('imageFile').onchange=async e=>{
-  const f=e.target.files?.[0]; e.target.value=''; if(!f) return;
-  if(!f.type.startsWith('image/') && !/\.(heic|heif)$/i.test(f.name)){toast('Selecciona una imagen'); return;}
-  if(f.size>26*1024*1024){toast('Imagen demasiado grande (máximo 26 MB)'); return;}
-  try{
-    const dataURL=await new Promise((resolve,reject)=>{const r=new FileReader(); r.onload=()=>resolve(r.result); r.onerror=reject; r.readAsDataURL(f);});
-    const img=await new Promise((resolve,reject)=>{const i=new Image(); i.onload=()=>resolve(i); i.onerror=reject; i.src=dataURL;});
-    pushHistory(); const l=makeImageLayer('Referencia · '+f.name,dataURL,img); layers.unshift(l); selected=0; rebuild(l); refreshLayers(); syncImageUI(); paint(); saveLocal(); toast('Imagen importada como capa');
-  } catch(err){toast('No se pudo abrir la imagen');}
-};
+$('imageFile').onchange=async e=>{const f=e.target.files?.[0]; e.target.value=''; if(!f) return; if(!f.type.startsWith('image/') && !/\.(heic|heif)$/i.test(f.name)){toast('Selecciona una imagen'); return;} if(f.size>26*1024*1024){toast('Imagen demasiado grande (máximo 26 MB)'); return;} try{const dataURL=await new Promise((resolve,reject)=>{const r=new FileReader(); r.onload=()=>resolve(r.result); r.onerror=reject; r.readAsDataURL(f);}); const img=await new Promise((resolve,reject)=>{const i=new Image(); i.onload=()=>resolve(i); i.onerror=reject; i.src=dataURL;}); pushHistory(); const l=makeImageLayer('Referencia · '+f.name,dataURL,img); layers.unshift(l); selected=0; rebuild(l); refreshLayers(); syncImageUI(); paint(); saveLocal(); toast('Imagen importada como capa');}catch(err){toast('No se pudo abrir la imagen');}};
 $('imageOpacity').oninput=e=>{$('imageOpacityLabel').textContent=e.target.value+'%'; const l=currentLayer(); if(l && l.kind==='image'){ l.imageOpacity=+e.target.value/100; rebuild(l); paint(); }};
 $('imageOpacity').onchange=()=>{pushHistory(); saveLocal();};
 $('imageContain').onclick=()=>{const l=currentLayer(); if(!l||l.kind!=='image') return; pushHistory(); fitImageLayer(l,'contain'); paint(); saveLocal();};
