@@ -1,1 +1,15 @@
-Atelier Harmony v0.8 - BIC microtrazo. Nueva herramienta BIC con renderizado temporal 3x por trazo, interpolación, microtextura opcional y control de estabilización. Se mantienen capas, modos de fusión, redimensionado y demás herramientas. La calidad observada depende de Safari y de la pantalla.
+Atelier Harmony 1.0 / versión 10
+
+Novedades:
+- Herramienta Pluma vectorial de relleno (sin trazo).
+- Herramienta Editar nodos.
+- Capas vectoriales.
+- Cierre y cancelación de forma.
+- Se mantienen capas raster, referencia, fusión y exportación PNG.
+
+Uso rápido:
+1. Crea una capa vectorial.
+2. Elige "Pluma relleno".
+3. Toca para crear nodos y arrastra para sacar manejadores.
+4. Toca el primer nodo o pulsa "Cerrar forma" para rellenar.
+5. Usa "Editar nodos" para ajustar la curva.
