@@ -1,4 +1,7 @@
-ATELIER HARMONY 1.1 — INTERFAZ AZUL FUTURISTA
-Actualización visual inspirada en la imagen aportada por el usuario. Mantiene la pluma vectorial, edición de nodos, capas, BIC, grafito, referencia y exportación.
-SUBIDA: descomprime y sube el CONTENIDO de harmony-ipad a la raíz de GitHub. Comprueba que el archivo index.html se sustituye. La web publicada está en https://jos541.github.io/atelier-harmony/?v=11.
-Antes de borrar datos del sitio, exporta tu proyecto JSON.
+Atelier Harmony 2.0 — offline
+1. Subir los archivos de harmony-ipad a la raíz de GitHub Pages.
+2. Abrir en Safari en el iPad con conexión, esperar a que cargue y usar Compartir > Añadir a pantalla de inicio.
+3. Una vez abierta y almacenada en caché, debe funcionar sin conexión.
+4. Guardado automático en IndexedDB por navegador y origen. Exporta también JSON regularmente.
+5. Para probar en Mac sin conexión, usar Chrome instalando la PWA desde su URL de GitHub Pages (no file://).
+El primer arranque requiere conexión y una instalación desde un origen HTTPS.
