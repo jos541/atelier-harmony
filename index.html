@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#171b20">
+<meta name="theme-color" content="#061827">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Atelier Harmony">
@@ -20,16 +20,55 @@ header{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;pa
 .layer{border:1px solid #424b55;border-radius:9px;padding:8px;margin-bottom:7px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px}.layer.selected{border-color:var(--accent);background:#334743}.layer span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.layer button{padding:3px 5px;border:0;background:transparent;margin:0}
 .section{margin-bottom:10px}.hide{display:none}dialog{border:1px solid #57636c;color:#e8eff3;background:#232b32;border-radius:14px;max-width:min(430px,90vw)}dialog::backdrop{background:#0009}dialog label{margin:11px 0}dialog input[type=number]{width:110px;padding:7px;border-radius:7px;background:#38434a;color:white;border:1px solid #56636c}
 @media(max-width:950px){.tools{width:180px;padding:8px}.layers{width:180px;padding:8px}.tools button,.layers button{font-size:12px;padding:7px 9px}.meta{font-size:10px}}@media(max-width:640px){.tools,.layers{width:136px}header button{font-size:11px!important;padding:7px!important}.hint{font-size:10px;max-width:60%}}
-.brushGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.brushGrid button{width:100%;min-height:73px;padding:5px!important;margin:0!important;text-align:center!important;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;font-size:11px!important}.brushGrid svg{width:58px;height:34px}.tools,.layers{background:repeating-linear-gradient(5deg,#18352f,#18352f 7px,#1b3932 8px,#18352f 9px)}.layer{background:#1e4138}header{background:#203b34}.tools,.layers,header{background-image:linear-gradient(#111a1acb,#111a1acb),url("grafito-textura.jpg")!important;background-size:cover,320px 320px!important;background-repeat:no-repeat,repeat!important}.brushGrid button{background:#293437e9}.brushGrid button.active{background:#b5c5bc} .tools,.layers{box-shadow:inset 0 0 28px #050908a3} .brushGrid{gap:7px}</style>
+.brushGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.brushGrid button{width:100%;min-height:73px;padding:5px!important;margin:0!important;text-align:center!important;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;font-size:11px!important}.brushGrid svg{width:58px;height:34px}.tools,.layers{background:repeating-linear-gradient(5deg,#18352f,#18352f 7px,#1b3932 8px,#18352f 9px)}.layer{background:#1e4138}header{background:#203b34}.tools,.layers,header{background-image:linear-gradient(#111a1acb,#111a1acb),url("grafito-textura.jpg")!important;background-size:cover,320px 320px!important;background-repeat:no-repeat,repeat!important}.brushGrid button{background:#293437e9}.brushGrid button.active{background:#b5c5bc} .tools,.layers{box-shadow:inset 0 0 28px #050908a3} .brushGrid{gap:7px}
+
+/* HARMONY / ELECTRIC BLUE STUDIO — inspired by supplied futuristic control surface */
+:root{--panel:#061d2e;--border:#155778;--accent:#30e0ff;--accentText:#041b2b;color:#c7e7f2;background:#020f1b}
+html,body{background:#020d18}
+.app{background:radial-gradient(ellipse 120% 65% at 50% -15%,#114663 0%,#061e31 46%,#020b14 100%)}
+header{position:relative;z-index:4;flex-wrap:nowrap;gap:6px;min-height:68px;padding:9px 13px;border-bottom:2px solid #28dbff;box-shadow:0 0 28px #05a5d84d,inset 0 -1px 0 #cbfaff4a;background:linear-gradient(180deg,#092940,#041525)!important}
+header::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#42ddfc,transparent);opacity:.55}
+header h1{font-size:13px;line-height:1.15;letter-spacing:1.7px;margin:0 20px 0 1px;color:#e7faff;font-weight:750;display:flex;align-items:center;gap:5px}
+header h1 em{font-style:normal;color:#55dfff;font-weight:500}header h1 small{font-size:8px;letter-spacing:1px;color:#5396b3;margin-left:9px;white-space:nowrap}
+.brand-glyph{font-size:24px;color:#48e5ff;text-shadow:0 0 15px #11d5ff;line-height:1}
+button{background:linear-gradient(180deg,#0b3149,#061d31);border:1px solid #1b5873;border-radius:5px;color:#b6ddeb;box-shadow:inset 0 1px 0 #4bacc129,0 2px 7px #0005;transition:background .12s,border-color .12s;color:#cde8f3}
+button:active{background:#156184;border-color:#4be6ff}button.active{background:linear-gradient(180deg,#125875,#073b5e);color:#8cf4ff;border:1px solid #48dcfa;box-shadow:0 0 13px #0aaad55c,inset 0 0 13px #1de3f01d}
+header button.small{font-size:11px;padding:8px 9px;white-space:nowrap}header #export{margin-left:4px;color:#e2fdff}
+.work{background:#031321;gap:0}
+.tools,.layers{background:linear-gradient(180deg,#0c293cfa,#051523f7)!important;background-image:linear-gradient(180deg,#09293ce9,#04131ff0),url("grafito-textura.jpg")!important;background-size:cover,340px 340px!important;background-repeat:no-repeat,repeat!important;box-shadow:inset -1px 0 0 #1f779128,inset 0 14px 22px #01101c8a}
+.tools{width:254px;padding:12px 13px;border-right:1px solid #2681a1}.layers{width:245px;padding:12px 13px;border-left:1px solid #2681a1}
+.module-title{font-size:10px;letter-spacing:1.65px;color:#74ddf4;font-weight:700;margin:16px -2px 12px;display:flex;align-items:center;gap:7px;padding:6px 1px 8px;border-bottom:1px solid #1e5d777a;box-shadow:0 1px 0 #2de4ff1a}
+.module-title:first-child{margin-top:2px}.module-id{margin-left:auto;color:#527b92;font-size:8px;letter-spacing:.65px;font-weight:500}.pulse-dot{width:5px;height:5px;border-radius:50%;background:#47f0ff;box-shadow:0 0 9px #35eaff}
+.brushGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.brushGrid button{height:82px;min-height:82px;position:relative;border-radius:4px;padding:7px 4px!important;background:linear-gradient(150deg,#10334c,#061a2c)!important;border:1px solid #20546a!important;box-shadow:inset 0 0 15px #092436,0 2px 8px #0005;text-transform:uppercase;font-size:9px!important;letter-spacing:.6px;font-weight:650;color:#b4d6e7}
+.brushGrid button::before{content:"";position:absolute;top:5px;left:5px;width:4px;height:4px;border:1px solid #2f809d;border-radius:50%}
+.brushGrid button svg{width:67px;height:38px;filter:drop-shadow(0 0 4px #1ca6c46b)}
+.brushGrid button.active{background:linear-gradient(155deg,#146081,#083451)!important;border-color:#4be5ff!important;color:#eeffff;box-shadow:0 0 16px #13c5f943,inset 0 0 18px #0ad0e32f}
+.brushGrid button.active::before{background:#58faff;box-shadow:0 0 8px #1df8ff}
+label{color:#85acc0;font-size:11px;line-height:1.4}input[type=range]{accent-color:#45dcf8}input[type=color],input[type=number],select{background:#061b2d;border:1px solid #23647d;color:#d6fbff}
+.meta{color:#80a2b6}.layer{background:#0b283b;border:1px solid #285269;border-radius:4px;font-size:12px;min-height:39px;color:#c3e3f0}.layer.selected{background:linear-gradient(90deg,#13516e,#0d3148);border-color:#39bfe0;box-shadow:inset 2px 0 0 #55f0ff,0 0 10px #119ec026}
+.layer button{color:#51d7ef}.pill{background:#0c3249;border-color:#2b849d;color:#73e4f5}
+.stage{background-color:#061927;background-image:linear-gradient(90deg,#12344755 1px,transparent 1px),linear-gradient(#12344755 1px,transparent 1px),radial-gradient(ellipse at 50% 35%,#0d3a55,#02101c 85%);background-size:34px 34px,34px 34px,auto;background-position:0 0,0 0,center;box-shadow:inset 0 0 65px #0008}
+.stage canvas{box-shadow:0 0 0 1px #42b8dc83,0 11px 60px #000b,0 0 45px #05bbf323}
+#preview{box-shadow:none}
+.stage-ruler{position:absolute;top:10px;left:15px;right:14px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;z-index:6;font-size:9px;letter-spacing:1.25px;color:#69bed7;opacity:.9;text-shadow:0 0 10px #051825}.live-marker{color:#56ecf5;font-size:9px}
+.stage-indicator{position:absolute;z-index:5;bottom:14px;right:14px;pointer-events:none;padding:9px 11px;border:1px solid #288ba460;background:#04263fdc;color:#8beaf9;font-size:9px;font-weight:600;letter-spacing:1.4px;box-shadow:0 0 20px #08bad02e}
+.hint{background:#041b2adf;border:1px solid #286b7b77;border-radius:4px;color:#90c9dc;max-width:56%}
+#notice{background:#09283ef2;border:1px solid #32b2cd;color:#cff9ff;box-shadow:0 0 18px #16c2ee4a}
+dialog{background:linear-gradient(155deg,#0c3046,#061927);border:1px solid #37bedb;color:#d3f7ff;box-shadow:0 0 45px #0009}dialog input[type=number]{background:#092d43;border-color:#22738c}
+@media (max-width:1150px){header h1{margin-right:5px;font-size:11px}header h1 small{display:none}.tools{width:208px}.layers{width:202px}.brushGrid button{height:71px;min-height:71px}.brushGrid button svg{height:30px}header button.small{padding:7px 6px}}
+@media (max-width:790px){header button.small span{display:none}header{gap:3px;min-height:57px}header h1{letter-spacing:.5px}.tools{width:155px;padding:8px}.layers{width:155px;padding:8px}.brushGrid{gap:4px}.brushGrid button{height:67px;min-height:67px;font-size:8px!important;padding:3px!important}.brushGrid button svg{width:50px;height:28px}.module-id{display:none}.stage-indicator{display:none}}
+
+</style>
 </head>
 <body>
 <div class="app" id="app">
   <button class="cleanToggle" id="cleanToggle" title="Mostrar interfaz">☰</button>
   <header>
-    <h1>✦ Atelier Harmony</h1>
-    <button class="small" id="new">Nuevo</button>
-    <button class="small" id="undo">↶ Deshacer</button>
-    <button class="small" id="redo">↷ Rehacer</button>
+    <h1><span class="brand-glyph">◈</span> ATELIER <em>HARMONY</em> <small>STUDIO / 1.1</small></h1>
+    <button class="small" id="new">▣ <span>Nuevo</span></button>
+    <button class="small" id="undo">↶ <span>Deshacer</span></button>
+    <button class="small" id="redo">↷ <span>Rehacer</span></button>
     <button class="small" id="fit">Ajustar</button>
     <button class="small" id="zoomIn">＋</button>
     <button class="small" id="zoomOut">－</button>
@@ -37,13 +76,13 @@ header{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;pa
     <span class="grow"></span>
     <button class="small" id="save">Proyecto</button>
     <button class="small" id="load">Abrir</button>
-    <button class="small active" id="export">Exportar PNG</button>
+    <button class="small active" id="export">⤓ Exportar PNG</button>
   </header>
   <div class="work">
     <aside class="tools">
-      <h2>Herramientas</h2>
+      <div class="module-title"><span class="pulse-dot"></span> HERRAMIENTAS <span class="module-id">01 / TRAZO</span></div>
       <div id="brushes" class="brushGrid"></div>
-      <h2>Trazo</h2><label><input type="checkbox" id="bicTexture" checked> Microtextura BIC</label><label><input type="checkbox" id="bicStable" checked> Estabilización suave</label><label>Suavizado del BIC <span id="bicSmoothLabel">55%</span></label><input type="range" id="bicSmooth" min="0" max="85" value="55">
+      <div class="module-title">PARÁMETROS <span class="module-id">02 / CONTROL</span></div><label><input type="checkbox" id="bicTexture" checked> Microtextura BIC</label><label><input type="checkbox" id="bicStable" checked> Estabilización suave</label><label>Suavizado del BIC <span id="bicSmoothLabel">55%</span></label><input type="range" id="bicSmooth" min="0" max="85" value="55">
       <label>Color <input id="color" type="color" value="#172b35"></label><br>
       <label>Tamaño <span id="sizeLabel">8</span></label>
       <input id="size" type="range" min="1" max="65" value="8">
@@ -51,7 +90,7 @@ header{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;pa
       <input id="opacity" type="range" min="10" max="100" value="80">
       <label><input type="checkbox" id="finger" checked> Dibujar con dedo</label>
 
-      <h2>Referencia</h2>
+      <div class="module-title">REFERENCIA <span class="module-id">03 / IMAGEN</span></div>
       <button class="full" id="importImage">＋ Importar imagen</button>
       <input class="hide" type="file" accept="image/*,.heic,.heif" id="imageFile">
       <div class="section row">
@@ -63,34 +102,36 @@ header{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:7px;pa
       <button class="full" id="toggleTransform">Transformar referencia</button>
       <div class="meta">Con la referencia seleccionada y este modo activo, un dedo mueve la imagen; dos dedos la escalan, rotan y desplazan.</div>
 
-      <h2>Lienzo</h2><button class="full" id="resizeCanvas">Tamaño del lienzo…</button>
+      <div class="module-title">LIENZO <span class="module-id">04 / SOPORTE</span></div><button class="full" id="resizeCanvas">Tamaño del lienzo…</button>
       <div id="dims" class="meta"></div>
       <label><input id="transparent" type="checkbox"> Exportar transparente</label>
       <button class="full" id="clear">Vaciar capa</button>
 
-      <h2>Vector</h2>
+      <div class="module-title">VECTOR <span class="module-id">05 / BÉZIER</span></div>
       <button class="full" id="closeVectorShape">Cerrar forma</button>
       <button class="full" id="cancelVectorShape">Cancelar forma</button>
       <div class="meta">La pluma vectorial crea formas Bézier con solo relleno. Toca para añadir nodos, arrastra para sacar manejadores y toca el primer nodo para cerrar.</div>
 
-      <h2>Ayuda</h2>
+      <div class="module-title">AYUDA <span class="module-id">06 / GUÍA</span></div>
       <div class="meta">Apple Pencil: presión variable reforzada para que el grosor se note claramente.<br>Dos dedos: zoom y desplazamiento del lienzo.<br>Difuminar: arrastra color y mezcla píxeles de la capa actual.<br>Borrador: presión suave borra poco; presión fuerte borra más. Comprueba el rango de presión en Estado.</div>
     </aside>
 
     <main class="stage" id="stage">
+      <div class="stage-ruler" aria-hidden="true"><span>CANVAS / EDITOR</span><span class="live-marker">● EN VIVO</span></div>
       <canvas id="display"></canvas>
       <canvas id="preview"></canvas>
       <div id="notice"></div>
+      <div class="stage-indicator" id="stageIndicator">● BIC FINO / RASTER</div>
       <div class="hint" id="hint">Apple Pencil · 2 dedos para zoom y desplazamiento</div>
     </main>
 
     <aside class="layers">
-      <h2>Capas</h2>
+      <div class="module-title"><span class="pulse-dot"></span> CAPAS <span class="module-id">01 / ORDEN</span></div>
       <div id="layerList"></div>
       <div class="row"><button id="addLayer" title="Nueva capa raster">＋ Píxel</button><button id="addVectorLayer" title="Nueva capa vectorial">＋ Vector</button><button id="deleteLayer" title="Eliminar capa">−</button></div>
       <div class="row" style="margin-top:7px"><button id="up" title="Subir capa">↑</button><button id="down" title="Bajar capa">↓</button></div>
-      <h2>Fusión de capa</h2><select id="blendMode" style="width:100%"><option value="source-over">Normal</option><option value="multiply">Multiplicar</option><option value="luminosity">Luminosidad</option><option value="soft-light">Luz suave</option></select><h2>Estado</h2>
-      <div class="meta" id="statusText">Versión 1.0</div>
+      <div class="module-title">FUSIÓN DE CAPA <span class="module-id">02 / MEZCLA</span></div><select id="blendMode" style="width:100%"><option value="source-over">Normal</option><option value="multiply">Multiplicar</option><option value="luminosity">Luminosidad</option><option value="soft-light">Luz suave</option></select><div class="module-title">SISTEMA <span class="module-id">03 / INFO</span></div>
+      <div class="meta" id="statusText">Versión 1.1</div>
       <p class="meta" style="margin-top:12px"><span class="pill" id="modePill">Modo dibujo</span></p>
     </aside>
   </div>
@@ -460,7 +501,7 @@ function refreshLayers(){
   });
 }
 function syncImageUI(){const l=currentLayer(), active=l && l.kind==='image'; $('imageOpacity').disabled=!active; $('imageContain').disabled=!active; $('imageCover').disabled=!active; $('toggleTransform').disabled=!active; if(active){$('imageOpacity').value=Math.round((l.imageOpacity??1)*100); $('imageOpacityLabel').textContent=$('imageOpacity').value+'%';} if(!active) transformMode=false; $('toggleTransform').classList.toggle('active',transformMode); updateStatus();}
-function updateStatus(){ const vectorMode=(brush==='vectorpen'||brush==='vectoredit'); $('modePill').textContent = transformMode ? 'Modo referencia' : (vectorMode ? (brush==='vectorpen'?'Pluma vectorial':'Editar nodos') : (cleanMode ? 'Pantalla limpia' : 'Modo dibujo')); $('hint').textContent = transformMode ? 'Referencia activa · 1 dedo mover · 2 dedos escalar y rotar' : vectorMode ? 'Pluma: toca para nodos y arrastra para curvas · Editar nodos: mueve puntos y manejadores' : 'Apple Pencil · 2 dedos para zoom y desplazamiento'; $('statusText').textContent = `Versión 1.0 · Entrada: ${inputType} · Presión ${Number(lastPressure).toFixed(2)} · Rango ${Number(pressureMin).toFixed(2)}–${Number(pressureMax).toFixed(2)} · ${pressureSeen?'VARIABLE':'SIN VARIACIÓN DETECTABLE'} · Añadida pluma Bézier de relleno en capa vectorial.`; }
+function updateStatus(){ const marker=document.getElementById('stageIndicator'); if(marker) marker.textContent='● '+(brush==='vectorpen'?'PLUMA / RELLENO':brush==='vectoredit'?'EDICIÓN / NODOS':brush==='graphite8b'?'GRAFITO / 8B':brush==='bic'?'BIC FINO / RASTER':String(brush).toUpperCase()); const vectorMode=(brush==='vectorpen'||brush==='vectoredit'); $('modePill').textContent = transformMode ? 'Modo referencia' : (vectorMode ? (brush==='vectorpen'?'Pluma vectorial':'Editar nodos') : (cleanMode ? 'Pantalla limpia' : 'Modo dibujo')); $('hint').textContent = transformMode ? 'Referencia activa · 1 dedo mover · 2 dedos escalar y rotar' : vectorMode ? 'Pluma: toca para nodos y arrastra para curvas · Editar nodos: mueve puntos y manejadores' : 'Apple Pencil · 2 dedos para zoom y desplazamiento'; $('statusText').textContent = `Versión 1.1 · Entrada: ${inputType} · Presión ${Number(lastPressure).toFixed(2)} · Rango ${Number(pressureMin).toFixed(2)}–${Number(pressureMax).toFixed(2)} · ${pressureSeen?'VARIABLE':'SIN VARIACIÓN DETECTABLE'} · Añadida pluma Bézier de relleno en capa vectorial.`; }
 function toast(msg){$('notice').textContent=msg; $('notice').style.display='block'; clearTimeout(toast.t); toast.t=setTimeout(()=>$('notice').style.display='none',2500);}
 function download(blob,name){const url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=name; document.body.append(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),15000);}
 function queuePreview(){previewDirty=true; if(previewPending) return; previewPending=true; requestAnimationFrame(()=>{previewPending=false; if(!previewDirty) return; previewDirty=false; renderPreviewNow();});}
@@ -526,7 +567,7 @@ for(const evt of ['pointerup','pointercancel']) stage.addEventListener(evt,e=>{i
 stage.addEventListener('wheel',e=>{e.preventDefault(); if(transformMode) return; const r=stage.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top, nz=clamp(zoom*(e.deltaY>0?0.9:1.1),0.05,8); panX=x-(x-panX)*nz/zoom; panY=y-(y-panY)*nz/zoom; zoom=nz; layout();},{passive:false});
 
 const glyphs={vectorpen:'M9 28 L30 8 L47 24 L68 8 L91 28',vectoredit:'M12 28 L31 9 L49 24 L69 8 L88 27 M31 9 L20 4 M31 9 L36 2',graphite8b:'M10 31 L56 4 L75 8 L24 35 M56 4 L62 0 L75 8',bic:'M5 26 Q25 8 54 17 Q72 23 91 7',pen:'M5 26 Q25 8 54 17 Q72 23 91 7',pencil:'M5 26 Q25 8 54 17 Q72 23 91 7',ink:'M5 30 C20 2 36 2 50 21 S80 30 92 6',eraser:'M14 28 L48 9 L80 28',smudge:'M12 15 Q31 4 51 17 T90 17',sketchy:'M4 29 L23 5 L40 28 L63 7 L93 29',web:'M7 28 L24 5 L65 26 L89 7 M7 7 L89 28 M24 5 L89 7',shaded:'M8 27 L82 6 M14 29 L88 10 M18 29 L92 13',fur:'M10 28 L25 6 L36 27 L43 9 L59 28 L77 8 L90 26',ribbon:'M6 24 Q25 2 52 20 T92 6 M6 29 Q25 7 52 25 T92 11',chrome:'M8 27 L34 8 L62 25 L88 7 M8 7 L88 27',cross:'M8 27 L82 7 M8 7 L82 27 M30 31 L90 12'};
-for(const [id,name] of modes){const b=document.createElement('button'); const toolIcon=(id)=>{const pencil=['bic','pen','pencil','graphite8b','ink'].includes(id),eraser=id==='eraser',smudge=id==='smudge',vector=['vectorpen','vectoredit'].includes(id);if(vector)return '<svg viewBox="0 0 100 36"><path d="'+(glyphs[id]||glyphs.vectorpen)+'" stroke="#cfe7da" stroke-width="2" fill="none"/><circle cx="31" cy="9" r="3" fill="#ffffff"/><circle cx="49" cy="24" r="3" fill="#ffffff"/><circle cx="69" cy="8" r="3" fill="#ffffff"/></svg>';if(pencil)return '<svg viewBox="0 0 100 36"><g transform="translate(23 28) rotate(-26)"><path d="M0 0 L9 -25 L15 -27 L23 -25 L32 0 L16 5Z" fill="#dfc9a6" stroke="#26372c" stroke-width="1.5"/><path d="M9 -25 L15 -30 L23 -25" fill="#444"/><path d="M7 -4 L24 -4" stroke="#343434" stroke-width="2"/></g><path d="M58 27 Q70 5 93 22" stroke="#9ab3a9" stroke-width="2" fill="none"/></svg>';if(eraser)return '<svg viewBox="0 0 100 36"><g transform="translate(19 7) rotate(-18 25 10)"><rect x="3" y="4" width="61" height="23" rx="7" fill="#d4b2a7" stroke="#27362f"/><path d="M35 4 V27" stroke="white" stroke-width="2"/></g></svg>';if(smudge)return '<svg viewBox="0 0 100 36"><path d="M12 29 L77 7 L86 12 L20 34Z" fill="#b7a68e" stroke="#3c4134"/><path d="M77 7 L94 3 L86 12" fill="#ddd1b9"/></svg>';return '<svg viewBox="0 0 100 36"><path d="'+(glyphs[id]||glyphs.pen)+'" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>';};b.innerHTML=toolIcon(id)+'<span>'+name+'</span>'; b.dataset.brush=id; b.className='full'; b.onclick=()=>{brush=id; document.querySelectorAll('#brushes button').forEach(x=>x.classList.toggle('active',x.dataset.brush===id));}; $('brushes').append(b);} brush='bic';document.querySelector('[data-brush=bic]').classList.add('active');
+for(const [id,name] of modes){const b=document.createElement('button'); const toolIcon=(id)=>{const pencil=['bic','pen','pencil','graphite8b','ink'].includes(id),eraser=id==='eraser',smudge=id==='smudge',vector=['vectorpen','vectoredit'].includes(id);if(vector)return '<svg viewBox="0 0 100 36"><path d="'+(glyphs[id]||glyphs.vectorpen)+'" stroke="#cfe7da" stroke-width="2" fill="none"/><circle cx="31" cy="9" r="3" fill="#ffffff"/><circle cx="49" cy="24" r="3" fill="#ffffff"/><circle cx="69" cy="8" r="3" fill="#ffffff"/></svg>';if(pencil)return '<svg viewBox="0 0 100 36"><g transform="translate(23 28) rotate(-26)"><path d="M0 0 L9 -25 L15 -27 L23 -25 L32 0 L16 5Z" fill="#dfc9a6" stroke="#26372c" stroke-width="1.5"/><path d="M9 -25 L15 -30 L23 -25" fill="#444"/><path d="M7 -4 L24 -4" stroke="#343434" stroke-width="2"/></g><path d="M58 27 Q70 5 93 22" stroke="#9ab3a9" stroke-width="2" fill="none"/></svg>';if(eraser)return '<svg viewBox="0 0 100 36"><g transform="translate(19 7) rotate(-18 25 10)"><rect x="3" y="4" width="61" height="23" rx="7" fill="#d4b2a7" stroke="#27362f"/><path d="M35 4 V27" stroke="white" stroke-width="2"/></g></svg>';if(smudge)return '<svg viewBox="0 0 100 36"><path d="M12 29 L77 7 L86 12 L20 34Z" fill="#b7a68e" stroke="#3c4134"/><path d="M77 7 L94 3 L86 12" fill="#ddd1b9"/></svg>';return '<svg viewBox="0 0 100 36"><path d="'+(glyphs[id]||glyphs.pen)+'" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>';};b.innerHTML=toolIcon(id)+'<span>'+name+'</span>'; b.dataset.brush=id; b.className='full'; b.onclick=()=>{brush=id; document.querySelectorAll('#brushes button').forEach(x=>x.classList.toggle('active',x.dataset.brush===id)); updateStatus(); if(typeof renderPreviewNow==='function')renderPreviewNow();}; $('brushes').append(b);} brush='bic';document.querySelector('[data-brush=bic]').classList.add('active');
 
 $('blendMode').onchange=e=>{const l=currentLayer();if(!l)return;pushHistory();l.blend=e.target.value;paint();renderPreviewNow();saveLocal();};
 $('resizeCanvas').onclick=()=>{$('resizeWidth').value=W;$('resizeHeight').value=H;$('resizeDialog').showModal();};
@@ -578,7 +619,7 @@ $('cleanMode').onclick=()=>setCleanMode(!cleanMode); $('cleanToggle').onclick=()
 
 try{const saved=JSON.parse(localStorage.getItem('atelier-harmony-project')); if(saved?.layers && saved.width*saved.height<=24000000) restore(saved); else throw Error('no');}
 catch{layers=[makePaintLayer('Capa 1')]; refreshLayers(); requestAnimationFrame(()=>{fit(); paint(); renderPreviewNow(); syncImageUI(); updateStatus();});}
-if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js?v=11').catch(()=>{});
 })();
 </script>
 </body>

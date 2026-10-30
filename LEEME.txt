@@ -1,15 +1,4 @@
-Atelier Harmony 1.0 / versión 10
-
-Novedades:
-- Herramienta Pluma vectorial de relleno (sin trazo).
-- Herramienta Editar nodos.
-- Capas vectoriales.
-- Cierre y cancelación de forma.
-- Se mantienen capas raster, referencia, fusión y exportación PNG.
-
-Uso rápido:
-1. Crea una capa vectorial.
-2. Elige "Pluma relleno".
-3. Toca para crear nodos y arrastra para sacar manejadores.
-4. Toca el primer nodo o pulsa "Cerrar forma" para rellenar.
-5. Usa "Editar nodos" para ajustar la curva.
+ATELIER HARMONY 1.1 — INTERFAZ AZUL FUTURISTA
+Actualización visual inspirada en la imagen aportada por el usuario. Mantiene la pluma vectorial, edición de nodos, capas, BIC, grafito, referencia y exportación.
+SUBIDA: descomprime y sube el CONTENIDO de harmony-ipad a la raíz de GitHub. Comprueba que el archivo index.html se sustituye. La web publicada está en https://jos541.github.io/atelier-harmony/?v=11.
+Antes de borrar datos del sitio, exporta tu proyecto JSON.
