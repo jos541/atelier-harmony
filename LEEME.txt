@@ -1,25 +1,9 @@
-ATELIER HARMONY PARA IPAD — PROTOTIPO 0.1
+Atelier Harmony iPad v0.4
 
-INICIO INMEDIATO EN MAC
-- Descomprime el ZIP y abre index.html con Chrome o Safari en el Mac para probarlo.
-- Para instalarlo en iPad como app de inicio y uso sin conexión, necesitas alojar esta carpeta bajo HTTPS (por ejemplo GitHub Pages o tu hosting habitual).
-- En Safari del iPad, abre la URL HTTPS de la app, pulsa Compartir > Añadir a pantalla de inicio.
-- Tras la primera visita con Internet, el service worker permite uso sin conexión, sujeto a las políticas de almacenamiento de iPadOS.
+Novedades:
+- Imagen de referencia en capa independiente.
+- Mover, escalar y rotar la referencia con gestos.
+- Nuevo pincel Bolígrafo.
+- Botón Pantalla limpia para ocultar paletas.
 
-FUNCIONES
-- Apple Pencil (Pointer Events y presión cuando está disponible).
-- 8 pinceles procedurales propios inspirados por Harmony (no idénticos).
-- Capas, ocultación, cambio de orden, cambio de nombre (doble toque/clic), vaciar capa.
-- Deshacer/rehacer (22 pasos), zoom y desplazamiento con dos dedos.
-- Exportación PNG nativa hasta 24 megapíxeles, opcionalmente transparente.
-- Guardar y abrir proyecto JSON editable.
-- Recuperación local automática cuando el navegador permite almacenamiento.
-
-LÍMITES
-- Este prototipo NO contiene el código original de Harmony; los pinceles son aproximaciones independientes.
-- El autoguardado local puede agotarse en dibujos complejos. Guarda periódicamente el proyecto JSON.
-- No exporta PSD ni SVG, no ofrece mezcla avanzada de capas.
-- No existe aún paquete IPA para instalar por App Store.
-
-Referencia conceptual: https://mrdoob.github.io/harmony/
-Código original: https://github.com/mrdoob/harmony (GPLv3). No incorporado a este prototipo.
+Sube el contenido de esta carpeta a la raíz del repositorio GitHub Pages.
